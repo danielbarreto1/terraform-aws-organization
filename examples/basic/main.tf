@@ -6,52 +6,47 @@ module "organization" {
   source = "../../"
 
   # Uncomment and set this if you already have an AWS Organization
-  # existing_organization_id = "r-xxxx"
+   existing_organization_id = "r-d4hh"
 
   # You can add more OUs here, such as "security", "networking", "platform", etc.
   organizational_units = {
-    workloads      = "Workloads"
     infrastructure = "Infrastructure"
     # security     = "Security"
     # networking   = "Networking"
-    # platform     = "Platform"
+    platform     = "Platform"
+    contas = "Contas"
+    new-account = "new-account"
   }
 
   accounts = {
-    development = {
-      email      = "youremailgroup+awsdev@example.com"
-      name       = "Development"
-      parent_key = "workloads"
+    dev = {
+      email      = "danielbarreeto+dev@gmail.com"
+      name       = "daniel-infra-dev"
+      parent_key = "platform/contas/new-account"
     }
 
-    staging = {
-      email      = "youremailgroup+awsstaging@example.com"
-      name       = "Staging"
-      parent_key = "workloads"
+    qas = {
+      email      = "danielbarreeto+qas@gmail.com"
+      name       = "daniel-infra-qas"
+      parent_key = "platform/contas/new-account"
     }
 
-    production = {
-      email      = "youremailgroup+awsproduction@example.com"
-      name       = "Production"
-      parent_key = "workloads"
-    }
-
-    shared = {
-      email      = "youremailgroup+awsshared@example.com"
-      name       = "Shared"
-      parent_key = "infrastructure"
+    prd = {
+      email      = "danielbarreeto+prd@gmail.com"
+      name       = "daniel-infra-prd"
+      parent_key = "platform/contas/new-account"
     }
   }
 
   tags = {
-    ManagedBy   = "Terraform"
-    Environment = "OrgSetup"
+    Provisioning-method = "terraform"
+    Environment = "orgsetup"
   }
 
-  aws_service_access_principals = [
-    "sso.amazonaws.com",
-    "health.amazonaws.com"
-  ]
+  # aws_service_access_principals = [
+  #   "sso.amazonaws.com",
+  #   "health.amazonaws.com"
+  # ]
 
   enabled_policy_types = [
     "SERVICE_CONTROL_POLICY"

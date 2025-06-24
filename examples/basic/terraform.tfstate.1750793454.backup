@@ -1,0 +1,271 @@
+{
+  "version": 4,
+  "terraform_version": "1.12.2",
+  "serial": 7,
+  "lineage": "4f354ec3-10cd-406a-adc4-15c073448b7e",
+  "outputs": {},
+  "resources": [
+    {
+      "module": "module.organization",
+      "mode": "data",
+      "type": "aws_organizations_organization",
+      "name": "org",
+      "provider": "module.organization.provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "index_key": 0,
+          "schema_version": 0,
+          "attributes": {
+            "accounts": [
+              {
+                "arn": "arn:aws:organizations::125480470368:account/o-zxvbjm4dy2/125480470368",
+                "email": "danielbarreeto@gmail.com",
+                "id": "125480470368",
+                "name": "danielbarreeto",
+                "status": "ACTIVE"
+              },
+              {
+                "arn": "arn:aws:organizations::125480470368:account/o-zxvbjm4dy2/483151609173",
+                "email": "danielbarreeto+qas@gmail.com",
+                "id": "483151609173",
+                "name": "daniel-infra-qas",
+                "status": "ACTIVE"
+              },
+              {
+                "arn": "arn:aws:organizations::125480470368:account/o-zxvbjm4dy2/765732641470",
+                "email": "danielbarreeto+prd@gmail.com",
+                "id": "765732641470",
+                "name": "daniel-infra-prd",
+                "status": "ACTIVE"
+              },
+              {
+                "arn": "arn:aws:organizations::125480470368:account/o-zxvbjm4dy2/990858070919",
+                "email": "danielbarreeto+dev@gmail.com",
+                "id": "990858070919",
+                "name": "daniel-infra-dev",
+                "status": "ACTIVE"
+              }
+            ],
+            "arn": "arn:aws:organizations::125480470368:organization/o-zxvbjm4dy2",
+            "aws_service_access_principals": [
+              "sso.amazonaws.com"
+            ],
+            "enabled_policy_types": [],
+            "feature_set": "ALL",
+            "id": "o-zxvbjm4dy2",
+            "master_account_arn": "arn:aws:organizations::125480470368:account/o-zxvbjm4dy2/125480470368",
+            "master_account_email": "danielbarreeto@gmail.com",
+            "master_account_id": "125480470368",
+            "master_account_name": "danielbarreeto",
+            "non_master_accounts": [
+              {
+                "arn": "arn:aws:organizations::125480470368:account/o-zxvbjm4dy2/483151609173",
+                "email": "danielbarreeto+qas@gmail.com",
+                "id": "483151609173",
+                "name": "daniel-infra-qas",
+                "status": "ACTIVE"
+              },
+              {
+                "arn": "arn:aws:organizations::125480470368:account/o-zxvbjm4dy2/765732641470",
+                "email": "danielbarreeto+prd@gmail.com",
+                "id": "765732641470",
+                "name": "daniel-infra-prd",
+                "status": "ACTIVE"
+              },
+              {
+                "arn": "arn:aws:organizations::125480470368:account/o-zxvbjm4dy2/990858070919",
+                "email": "danielbarreeto+dev@gmail.com",
+                "id": "990858070919",
+                "name": "daniel-infra-dev",
+                "status": "ACTIVE"
+              }
+            ],
+            "roots": [
+              {
+                "arn": "arn:aws:organizations::125480470368:root/o-zxvbjm4dy2/r-d4hh",
+                "id": "r-d4hh",
+                "name": "Root",
+                "policy_types": []
+              }
+            ]
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0
+        }
+      ]
+    },
+    {
+      "module": "module.organization",
+      "mode": "managed",
+      "type": "aws_organizations_account",
+      "name": "this",
+      "provider": "module.organization.provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "index_key": "dev",
+          "schema_version": 0,
+          "attributes": {
+            "arn": "arn:aws:organizations::125480470368:account/o-zxvbjm4dy2/125480470368",
+            "close_on_deletion": false,
+            "create_govcloud": false,
+            "email": "danielbarreeto@gmail.com",
+            "govcloud_id": null,
+            "iam_user_access_to_billing": null,
+            "id": "125480470368",
+            "joined_method": "INVITED",
+            "joined_timestamp": "2025-05-14T20:04:26Z",
+            "name": "danielbarreeto",
+            "parent_id": "ou-d4hh-ezioblsd",
+            "role_name": null,
+            "status": "ACTIVE",
+            "tags": {
+              "CreatedBy": "Terraform",
+              "Environment": "orgsetup",
+              "Module": "aws-foundation-organizations",
+              "Provisioning-method": "terraform"
+            },
+            "tags_all": {
+              "CreatedBy": "Terraform",
+              "Environment": "orgsetup",
+              "Module": "aws-foundation-organizations",
+              "Provisioning-method": "terraform"
+            },
+            "timeouts": null
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjo2MDAwMDAwMDAwMDAsImRlbGV0ZSI6NjAwMDAwMDAwMDAwLCJ1cGRhdGUiOjYwMDAwMDAwMDAwMH19",
+          "dependencies": [
+            "module.organization.aws_organizations_organization.org",
+            "module.organization.aws_organizations_organizational_unit.this"
+          ]
+        },
+        {
+          "index_key": "prd",
+          "schema_version": 0,
+          "attributes": {
+            "arn": "arn:aws:organizations::125480470368:account/o-zxvbjm4dy2/765732641470",
+            "close_on_deletion": false,
+            "create_govcloud": false,
+            "email": "danielbarreeto+prd@gmail.com",
+            "govcloud_id": "",
+            "iam_user_access_to_billing": null,
+            "id": "765732641470",
+            "joined_method": "CREATED",
+            "joined_timestamp": "2025-06-24T19:19:27Z",
+            "name": "daniel-infra-prd",
+            "parent_id": "ou-d4hh-ezioblsd",
+            "role_name": null,
+            "status": "ACTIVE",
+            "tags": {
+              "CreatedBy": "Terraform",
+              "Environment": "orgsetup",
+              "Module": "aws-foundation-organizations",
+              "Provisioning-method": "terraform"
+            },
+            "tags_all": {
+              "CreatedBy": "Terraform",
+              "Environment": "orgsetup",
+              "Module": "aws-foundation-organizations",
+              "Provisioning-method": "terraform"
+            },
+            "timeouts": null
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjo2MDAwMDAwMDAwMDAsImRlbGV0ZSI6NjAwMDAwMDAwMDAwLCJ1cGRhdGUiOjYwMDAwMDAwMDAwMH19",
+          "dependencies": [
+            "module.organization.aws_organizations_organization.org",
+            "module.organization.aws_organizations_organizational_unit.this"
+          ]
+        },
+        {
+          "index_key": "qas",
+          "schema_version": 0,
+          "attributes": {
+            "arn": "arn:aws:organizations::125480470368:account/o-zxvbjm4dy2/483151609173",
+            "close_on_deletion": false,
+            "create_govcloud": false,
+            "email": "danielbarreeto+qas@gmail.com",
+            "govcloud_id": "",
+            "iam_user_access_to_billing": null,
+            "id": "483151609173",
+            "joined_method": "CREATED",
+            "joined_timestamp": "2025-06-24T19:19:27Z",
+            "name": "daniel-infra-qas",
+            "parent_id": "ou-d4hh-ezioblsd",
+            "role_name": null,
+            "status": "ACTIVE",
+            "tags": {
+              "CreatedBy": "Terraform",
+              "Environment": "orgsetup",
+              "Module": "aws-foundation-organizations",
+              "Provisioning-method": "terraform"
+            },
+            "tags_all": {
+              "CreatedBy": "Terraform",
+              "Environment": "orgsetup",
+              "Module": "aws-foundation-organizations",
+              "Provisioning-method": "terraform"
+            },
+            "timeouts": null
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjo2MDAwMDAwMDAwMDAsImRlbGV0ZSI6NjAwMDAwMDAwMDAwLCJ1cGRhdGUiOjYwMDAwMDAwMDAwMH19",
+          "dependencies": [
+            "module.organization.aws_organizations_organization.org",
+            "module.organization.aws_organizations_organizational_unit.this"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "module.organization",
+      "mode": "managed",
+      "type": "aws_organizations_organizational_unit",
+      "name": "this",
+      "provider": "module.organization.provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "index_key": "infrastructure",
+          "schema_version": 0,
+          "attributes": {
+            "accounts": [
+              {
+                "arn": "arn:aws:organizations::125480470368:account/o-zxvbjm4dy2/483151609173",
+                "email": "danielbarreeto+qas@gmail.com",
+                "id": "483151609173",
+                "name": "daniel-infra-qas"
+              },
+              {
+                "arn": "arn:aws:organizations::125480470368:account/o-zxvbjm4dy2/765732641470",
+                "email": "danielbarreeto+prd@gmail.com",
+                "id": "765732641470",
+                "name": "daniel-infra-prd"
+              }
+            ],
+            "arn": "arn:aws:organizations::125480470368:ou/o-zxvbjm4dy2/ou-d4hh-ezioblsd",
+            "id": "ou-d4hh-ezioblsd",
+            "name": "Infrastructure",
+            "parent_id": "r-d4hh",
+            "tags": {},
+            "tags_all": {
+              "CreatedBy": "Terraform",
+              "Environment": "orgsetup",
+              "Module": "aws-foundation-organizations",
+              "Provisioning-method": "terraform"
+            }
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "bnVsbA==",
+          "dependencies": [
+            "module.organization.aws_organizations_organization.org"
+          ]
+        }
+      ]
+    }
+  ],
+  "check_results": null
+}
