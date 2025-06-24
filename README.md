@@ -31,7 +31,6 @@ A Terraform module to manage an AWS Organization, including:
 ```hcl
 module "organization" {
     
-  source = "yros-cloud/organization/aws"
   
   # Uncomment and set this if you already have an AWS Organization
   # existing_organization_id = "r-xxxx"
@@ -115,21 +114,3 @@ module "organization" {
 | `root_id`              | The root ID of the AWS Organization                                 |
 
 ---
-
-## 🧐 Notes
-
-* If `existing_organization_id` is set, the module uses that organization and **skips creating the root account**.
-* Accounts are only created if their `parent_key` matches a valid OU or `"root"`.
-
----
-
-## 📘 Example
-
-Check the [examples/basic](./examples/basic) folder for a full working example.
-
----
-
-## 📝 License
-
-MIT — see [LICENSE](./LICENSE) file.
-
