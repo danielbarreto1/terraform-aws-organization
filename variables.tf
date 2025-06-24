@@ -55,3 +55,9 @@ variable "tags" {
   default     = {}
   description = "Common tags to apply to each account."
 }
+
+variable "organizational_unit_parents" {
+  description = "Mapeamento de qual OU é pai de qual outra OU (usado para criar hierarquia de OUs)"
+  type        = map(string)
+  default     = {}
+}

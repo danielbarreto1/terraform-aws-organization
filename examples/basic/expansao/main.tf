@@ -3,39 +3,43 @@ provider "aws" {
 }
 
 module "organization" {
-  source = "../../"
+  source = "../../../"
 
   # Uncomment and set this if you already have an AWS Organization
    existing_organization_id = "r-d4hh"
 
   # You can add more OUs here, such as "security", "networking", "platform", etc.
   organizational_units = {
-    infrastructure = "Infrastructure"
-    # security     = "Security"
-    # networking   = "Networking"
-    platform     = "Platform"
-    contas = "Contas"
-    new-account = "new-account"
+    rumolog = "Rumo Logistica"
+    rumodominios = "Domínios Rumo"
+    expansao      = "expansao"
   }
+
+  organizational_unit_parents = {
+    rumodominios  = "rumolog"
+    expansao      = "rumodominios"
+}
 
   accounts = {
     dev = {
-      email      = "danielbarreeto+dev@gmail.com"
-      name       = "daniel-infra-dev"
-      parent_key = "platform/contas/new-account"
+      email      = "danielbarreeto+devexp@gmail.com"
+      name       = "daniel-infra-dev-expansao"
+      parent_key = "expansao"
     }
 
     qas = {
-      email      = "danielbarreeto+qas@gmail.com"
-      name       = "daniel-infra-qas"
-      parent_key = "platform/contas/new-account"
+      email      = "danielbarreeto+qasexp@gmail.com"
+      name       = "daniel-infra-qas-expansao"
+      parent_key = "expansao"
     }
 
     prd = {
-      email      = "danielbarreeto+prd@gmail.com"
-      name       = "daniel-infra-prd"
-      parent_key = "platform/contas/new-account"
+      email      = "danielbarreeto+prdexp@gmail.com"
+      name       = "daniel-infra-prd-expansao"
+      parent_key = "expansao"
     }
+
+
   }
 
   tags = {
